@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  api:
+    build: .
+    volumes:
+      - .:/code
+    command: /code/run.sh
+    ports:
+      - "8000:8000"
+
+

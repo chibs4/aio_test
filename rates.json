@@ -1,0 +1,14 @@
+{
+    "data": {
+        "2021-06-01": [
+            {
+                "cargo_type": "Glass",
+                "rate": "0.02"
+            },
+            {
+                "cargo_type": "Other",
+                "rate": "0.01"
+            }
+        ]
+    }
+}
