@@ -1,13 +1,15 @@
-FROM python:3
-ENV PYTHONUNBUFFERED 1
-RUN mkdir /code
-WORKDIR /code
-COPY requirements.txt /code/
+FROM python:3.12
 
-RUN pip install -U pip
+WORKDIR /app
 
-RUN pip install -r requirements.txt
+ENV PYTHONUNBUFFERED=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=on \
+    PYTHONPATH=/app
 
-COPY . /code/
+COPY . /app
+
+RUN pip install --upgrade pip && pip install -r requirements.txt;
+
+RUN pytest tests/;
 
 EXPOSE 8000
